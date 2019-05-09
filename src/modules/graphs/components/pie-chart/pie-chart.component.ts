@@ -10,16 +10,15 @@ import { IPath } from '../../interfaces/path.interface';
 export class PieChartComponent {
     @Input()
     public set values(values: Array<number>) {
+        console.log(values);
         const total: number = values.reduce((a: number, b: number) => {
             return a + b;
         }, 0);
 
-        const origin: ICoordinate = {
+        let startPosition: ICoordinate = {
             x: 0,
             y: -1
         };
-
-        let startPosition: ICoordinate = origin;
 
         let valueSum: number = 0;
 
