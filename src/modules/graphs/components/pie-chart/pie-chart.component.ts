@@ -10,7 +10,6 @@ import { IPath } from '../../interfaces/path.interface';
 export class PieChartComponent {
     @Input()
     public set values(values: Array<number>) {
-        console.log(values);
         const total: number = values.reduce((a: number, b: number) => {
             return a + b;
         }, 0);
