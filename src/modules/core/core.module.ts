@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { GraphsModule } from '../graphs';
 import { AppComponent } from './components/app/app.component';
 
 @NgModule({
@@ -7,7 +8,8 @@ import { AppComponent } from './components/app/app.component';
         AppComponent
     ],
     imports: [
-        BrowserModule
+        BrowserModule,
+        GraphsModule
     ],
     bootstrap: [AppComponent]
 })
