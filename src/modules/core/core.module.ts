@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DataModule } from '../data';
 import { GraphsModule } from '../graphs';
 import { AppComponent } from './components/app/app.component';
+import { GraphViewerComponent } from './components/graph-viewer/graph-viewer.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        GraphViewerComponent
     ],
     imports: [
         BrowserModule,

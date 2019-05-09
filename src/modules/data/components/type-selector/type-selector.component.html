@@ -1,4 +1,4 @@
-<label for="type-selector">Graph type</label>
-<select id="type-selector">
+<label class="label" for="type-selector">Graph type</label>
+<select class="selector" id="type-selector">
     <option *ngFor="let type of types" value="type.id" [innerText]="type.value"></option>
 </select>

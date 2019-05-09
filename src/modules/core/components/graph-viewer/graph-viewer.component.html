@@ -1,0 +1,5 @@
+<data-type-selector [types]="[{ id: 1, value: 'Pie chart' }]"></data-type-selector>
+
+<data-values [values]="values" (valuesChanges)="onValuesChange($event)"></data-values>
+
+<graph-pie-chart class="chart" [values]="values"></graph-pie-chart>

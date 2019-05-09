@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  margin: 10vh auto;
+  max-width: 700px;
+  width: 100%;
+}
+
+.chart {
+  height: 200px;
+  margin: 40px auto;
+  order: -1;
+  width: 200px;
+}

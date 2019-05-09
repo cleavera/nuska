@@ -1,7 +1,7 @@
-<ul>
-    <li *ngFor="let value of values; let i = index;">
-        <data-value-input [value]="value" (valueChange)="onValueChange($event, i)"></data-value-input>
-        <button (click)="onValueRemove(i)">Remove</button>
+<ul class="values">
+    <li class="value" *ngFor="let value of values; let i = index;">
+        <data-value-input class="value-input" [value]="value" (valueChange)="onValueChange($event, i)"></data-value-input>
+        <button class="value-remove" (click)="onValueRemove(i)">Remove</button>
     </li>
 </ul>
-<button (click)="onAddValue()">Add value</button>
+<button class="add-value" (click)="onAddValue()">Add value</button>

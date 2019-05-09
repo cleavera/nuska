@@ -2,7 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
     selector: 'data-values',
-    templateUrl: './values.component.html'
+    templateUrl: './values.component.html',
+    styleUrls: ['./values.component.scss']
 })
 export class ValuesComponent {
     @Input()

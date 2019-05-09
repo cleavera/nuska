@@ -3,7 +3,8 @@ import { IOption } from '../../interfaces/option.interface';
 
 @Component({
     selector: 'data-type-selector',
-    templateUrl: './type-selector.component.html'
+    templateUrl: './type-selector.component.html',
+    styleUrls: ['./type-selector.component.scss']
 })
 export class TypeSelectorComponent {
     @Input()
