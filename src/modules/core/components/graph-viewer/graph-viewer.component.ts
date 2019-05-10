@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class GraphViewerComponent {
     public values: Array<number> = [2, 1, 3];
+    public cutout: number = 0;
 
     public onValuesChange(values: Array<number>): void {
         this.values = values;
+    }
+
+    public onCutoutChange(cutout: number): void {
+        this.cutout = cutout;
     }
 }

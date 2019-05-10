@@ -1,5 +1,6 @@
 <data-type-selector [types]="[{ id: 1, value: 'Pie chart' }]"></data-type-selector>
 
+<data-cutout [cutout]="cutout" (cutoutChange)="onCutoutChange($event)"></data-cutout>
 <data-values [values]="values" (valuesChanges)="onValuesChange($event)"></data-values>
 
-<graph-pie-chart class="chart" [values]="values" [cutoutPercentage]="0.8"></graph-pie-chart>
+<graph-pie-chart class="chart" [values]="values" [cutoutPercentage]="cutout"></graph-pie-chart>

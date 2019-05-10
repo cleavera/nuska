@@ -1,0 +1,5 @@
+<label class="label" for="a">Cutout</label>
+<div class="inputContainer">
+    <input class="input" type="range" min="0" max="0.95" step="0.05" id="a" (input)="onCutoutChange($event.currentTarget.value)" [value]="cutout" />
+    <output class="inputValue" [innerText]="cutoutPercentage"></output>
+</div>
