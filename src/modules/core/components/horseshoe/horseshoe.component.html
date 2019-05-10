@@ -1,0 +1,5 @@
+<data-cutout [cutout]="cutout" (cutoutChange)="onCutoutChange($event)"></data-cutout>
+<data-total-graph-angle [angle]="angle" (angleChange)="onAngleChange($event)"></data-total-graph-angle>
+<data-values [values]="values" (valuesChanges)="onValuesChange($event)"></data-values>
+
+<graph-horseshoe class="chart" [values]="values" [cutoutPercentage]="cutout" [totalHorseshoeAngle]="angle"></graph-horseshoe>

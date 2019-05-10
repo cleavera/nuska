@@ -1,0 +1,5 @@
+<label class="label" for="b">Total graph angle</label>
+<div class="inputContainer">
+    <input class="input" type="range" min="0.05" max="0.95" step="0.05" id="b" (input)="onAngleChange($event.currentTarget.value)" [value]="angle" />
+    <output class="inputValue" [innerText]="angleDegrees"></output>
+</div>

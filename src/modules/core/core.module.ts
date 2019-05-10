@@ -5,6 +5,7 @@ import { GraphsModule } from '../graphs';
 import { AppComponent } from './components/app/app.component';
 import { GraphViewerComponent } from './components/graph-viewer/graph-viewer.component';
 import { HemisphereComponent } from './components/hemisphere/hemisphere.component';
+import { HorseshoeComponent } from './components/horseshoe/horseshoe.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 @NgModule({
@@ -12,6 +13,7 @@ import { PieChartComponent } from './components/pie-chart/pie-chart.component';
         AppComponent,
         GraphViewerComponent,
         HemisphereComponent,
+        HorseshoeComponent,
         PieChartComponent
     ],
     imports: [

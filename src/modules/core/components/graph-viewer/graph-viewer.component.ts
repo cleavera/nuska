@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IOption } from '../../../data';
-import { HEMISPHERE, PIE_CHART } from '../../constants/graph-types.constant';
+import { HEMISPHERE, HORSESHOE, PIE_CHART } from '../../constants/graph-types.constant';
 
 @Component({
     selector: 'core-graph-viewer',
@@ -10,7 +10,8 @@ import { HEMISPHERE, PIE_CHART } from '../../constants/graph-types.constant';
 export class GraphViewerComponent {
     public readonly TYPES: Array<IOption> = [
         { id: PIE_CHART, value: 'Pie chart' },
-        { id: HEMISPHERE, value: 'Hemisphere' }
+        { id: HEMISPHERE, value: 'Hemisphere' },
+        { id: HORSESHOE, value: 'Horseshoe' }
     ];
 
     public selectedChart: string = PIE_CHART;
@@ -25,5 +26,9 @@ export class GraphViewerComponent {
 
     public isHemisphereSelected(): boolean {
         return this.selectedChart === HEMISPHERE;
+    }
+
+    public isHorseshoeSelected(): boolean {
+        return this.selectedChart === HORSESHOE;
     }
 }
