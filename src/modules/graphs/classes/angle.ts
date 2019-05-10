@@ -21,6 +21,10 @@ export class Angle {
         return Math.abs(this.turns) > 0.5;
     }
 
+    public isNegative(): boolean {
+        return this.turns < 0;
+    }
+
     public add(angle: Angle): Angle {
         return Angle.FromTurns(this.turns + angle.turns);
     }
