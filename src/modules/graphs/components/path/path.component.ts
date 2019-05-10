@@ -1,12 +1,13 @@
 import { Component, ElementRef, Input } from '@angular/core';
+import { IPathPart } from '../../interfaces/path-part.interface';
 import { IPath } from '../../interfaces/path.interface';
 
 @Component({
-    selector: '[graph-pie-chart-segment]',
-    styleUrls: ['./pie-chart-segment.component.scss'],
-    templateUrl: './pie-chart-segment.component.html'
+    selector: '[graph-path]',
+    templateUrl: './path.component.html',
+    styleUrls: ['./path.component.scss']
 })
-export class PieChartSegmentComponent {
+export class PathComponent {
     @Input()
     public path!: IPath;
 
@@ -14,12 +15,12 @@ export class PieChartSegmentComponent {
         element.nativeElement.setAttribute('style', `--color: rgb(${this.colorPart()},${this.colorPart()},${this.colorPart()})`);
     }
 
-    public isLongAngleCurve(): boolean {
-        return this.path.angle > 0.5;
-    }
-
     public generateTheD(): string {
-        return `M ${this.path.start.x},${this.path.start.y} A 1 1 0 ${Number(this.isLongAngleCurve())} 1 ${this.path.end.x} ${this.path.end.y} L 0,0Z`;
+        const theD: string = `M ${this.path.start.x},${this.path.start.y}`;
+
+        return this.path.parts.reduce((declaration: string, pathPart: IPathPart): string => {
+            return `${declaration} ${pathPart.toPathPartDeclaration()}`;
+        }, theD) + 'Z';
     }
 
     private colorPart(): string {

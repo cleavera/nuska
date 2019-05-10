@@ -1,7 +1,7 @@
 import { ICoordinate } from './coordinate.interface';
+import { IPathPart } from './path-part.interface';
 
 export interface IPath {
     start: ICoordinate;
-    end: ICoordinate;
-    angle: number;
+    parts: Array<IPathPart>;
 }

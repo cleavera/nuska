@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { PieChartSegmentComponent } from './components/pie-chart-segment/pie-chart-segment.component';
+import { PathComponent } from './components/path/path.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 @NgModule({
@@ -11,8 +11,9 @@ import { PieChartComponent } from './components/pie-chart/pie-chart.component';
         CommonModule
     ],
     declarations: [
-        PieChartComponent,
-        PieChartSegmentComponent
+        PathComponent,
+        PieChartComponent
     ]
 })
-export class GraphsModule {}
+export class GraphsModule {
+}

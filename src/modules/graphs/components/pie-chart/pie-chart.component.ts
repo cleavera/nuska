@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Angle } from '../../classes/angle';
+import { Arc } from '../../classes/arc';
+import { Line } from '../../classes/line';
 import { ICoordinate } from '../../interfaces/coordinate.interface';
 import { IPath } from '../../interfaces/path.interface';
 
@@ -19,27 +22,27 @@ export class PieChartComponent {
             y: -1
         };
 
+        let startingAngle: Angle = Angle.FromTurns(0);
+
         let valueSum: number = 0;
 
         this.paths = values.map((value: number): IPath => {
             valueSum += value;
 
-            const angle: number = (valueSum / total) * 2 * Math.PI;
-            const adjustedAngle: number = Math.PI - angle;
+            const endingAngle: Angle = Angle.FromTurns(0.5).subtract(Angle.FromTurns(valueSum / total));
 
-            const x: number = Math.floor(Math.sin(adjustedAngle) * 1000) / 1000;
-            const y: number = Math.floor(Math.cos(adjustedAngle) * 1000) / 1000;
+            const arc: Arc = Arc.FromAngle(startingAngle, endingAngle);
 
             const path: IPath = {
                 start: startPosition,
-                end: {
-                    x,
-                    y
-                },
-                angle: value / total
+                parts: [
+                    arc,
+                    new Line({ x: 0, y: 0 })
+                ]
             };
 
-            startPosition = path.end;
+            startPosition = arc.endPosition;
+            startingAngle = endingAngle;
 
             return path;
         });
