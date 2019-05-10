@@ -1,3 +1,4 @@
 <data-type-selector [types]="TYPES" [selectedType]="selectedChart" (typeChange)="onChartChange($event)"></data-type-selector>
 
 <core-pie-chart *ngIf="isPieChartSelected()"></core-pie-chart>
+<core-hemisphere *ngIf="isHemisphereSelected()"></core-hemisphere>

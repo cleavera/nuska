@@ -1,0 +1,10 @@
+.chart {
+  height: 100px;
+  margin: 40px auto;
+  order: -1;
+  width: 200px;
+}
+
+:host {
+  display: contents;
+}

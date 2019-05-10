@@ -17,7 +17,6 @@ export class TypeSelectorComponent {
     public typeChange: EventEmitter<string> = new EventEmitter<string>();
 
     public onTypeChange(value: string): void {
-        console.log(value);
         this.typeChange.emit(value);
     }
 }

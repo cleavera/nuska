@@ -1,0 +1,4 @@
+<data-cutout [cutout]="cutout" (cutoutChange)="onCutoutChange($event)"></data-cutout>
+<data-values [values]="values" (valuesChanges)="onValuesChange($event)"></data-values>
+
+<graph-hemisphere class="chart" [values]="values" [cutoutPercentage]="cutout"></graph-hemisphere>
