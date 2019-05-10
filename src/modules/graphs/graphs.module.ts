@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HemisphereComponent } from './components/hemisphere/hemisphere.component';
 import { PathComponent } from './components/path/path.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
+import { PieChartService } from './services/pie-chart.service';
 
 @NgModule({
     exports: [
@@ -11,6 +12,9 @@ import { PieChartComponent } from './components/pie-chart/pie-chart.component';
     ],
     imports: [
         CommonModule
+    ],
+    providers: [
+        PieChartService
     ],
     declarations: [
         HemisphereComponent,

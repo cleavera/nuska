@@ -1,8 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { Angle } from '../../classes/angle';
-import { Arc } from '../../classes/arc';
-import { Line } from '../../classes/line';
 import { IPath } from '../../interfaces/path.interface';
+import { PieChartService } from '../../services/pie-chart.service';
 
 @Component({
     selector: 'graph-pie-chart',
@@ -18,39 +17,17 @@ export class PieChartComponent implements OnChanges {
 
     public paths!: Array<IPath>;
 
+    private _pieChartService: PieChartService;
+
+    constructor(pieChartService: PieChartService) {
+        this._pieChartService = pieChartService;
+    }
+
     public ngOnChanges(): void {
         this._reDraw();
     }
 
     private _reDraw(): void {
-        const total: number = this.values.reduce((a: number, b: number) => {
-            return a + b;
-        }, 0);
-
-        let startingAngle: Angle = Angle.FromTurns(0.5);
-
-        let valueSum: number = 0;
-
-        this.paths = this.values.map((value: number): IPath => {
-            valueSum += value;
-
-            const endingAngle: Angle = Angle.FromTurns(0.5).subtract(Angle.FromTurns(valueSum / total));
-
-            const outerArc: Arc = Arc.FromAngle(startingAngle, endingAngle);
-            const innerArc: Arc = Arc.FromAngle(endingAngle, startingAngle, this.cutoutPercentage);
-
-            const path: IPath = {
-                start: outerArc.startPosition,
-                parts: [
-                    outerArc,
-                    new Line(innerArc.startPosition),
-                    innerArc
-                ]
-            };
-
-            startingAngle = endingAngle;
-
-            return path;
-        });
+        this.paths = this._pieChartService.generatePaths(this.values, this.cutoutPercentage, Angle.FromTurns(0.5), Angle.FromTurns(1));
     }
 }
