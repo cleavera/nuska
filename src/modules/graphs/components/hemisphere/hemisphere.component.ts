@@ -2,7 +2,6 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { Angle } from '../../classes/angle';
 import { Arc } from '../../classes/arc';
 import { Line } from '../../classes/line';
-import { ICoordinate } from '../../interfaces/coordinate.interface';
 import { IPath } from '../../interfaces/path.interface';
 
 @Component({
@@ -28,11 +27,6 @@ export class HemisphereComponent implements OnChanges {
             return a + b;
         }, 0);
 
-        let startPosition: ICoordinate = {
-            x: -1,
-            y: 0
-        };
-
         let startingAngle: Angle = Angle.FromTurns(0.75);
 
         let valueSum: number = 0;
@@ -46,7 +40,7 @@ export class HemisphereComponent implements OnChanges {
             const innerArc: Arc = Arc.FromAngle(endingAngle, startingAngle, this.cutoutPercentage);
 
             const path: IPath = {
-                start: startPosition,
+                start: outerArc.startPosition,
                 parts: [
                     outerArc,
                     new Line(innerArc.startPosition),
@@ -54,7 +48,6 @@ export class HemisphereComponent implements OnChanges {
                 ]
             };
 
-            startPosition = outerArc.endPosition;
             startingAngle = endingAngle;
 
             return path;
