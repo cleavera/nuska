@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IOption } from '../../../data';
+import { PIE_CHART } from '../../constants/graph-types.constant';
 
 @Component({
     selector: 'core-graph-viewer',
@@ -6,14 +8,17 @@ import { Component } from '@angular/core';
     styleUrls: ['./graph-viewer.component.scss']
 })
 export class GraphViewerComponent {
-    public values: Array<number> = [2, 1, 3];
-    public cutout: number = 0;
+    public readonly TYPES: Array<IOption> = [
+        { id: PIE_CHART, value: 'Pie chart' }
+    ];
 
-    public onValuesChange(values: Array<number>): void {
-        this.values = values;
+    public selectedChart: string = PIE_CHART;
+
+    public onChartChange(chart: string): void {
+        this.selectedChart = chart;
     }
 
-    public onCutoutChange(cutout: number): void {
-        this.cutout = cutout;
+    public isPieChartSelected(): boolean {
+        return this.selectedChart === PIE_CHART;
     }
 }

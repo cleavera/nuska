@@ -4,11 +4,13 @@ import { DataModule } from '../data';
 import { GraphsModule } from '../graphs';
 import { AppComponent } from './components/app/app.component';
 import { GraphViewerComponent } from './components/graph-viewer/graph-viewer.component';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        GraphViewerComponent
+        GraphViewerComponent,
+        PieChartComponent
     ],
     imports: [
         BrowserModule,

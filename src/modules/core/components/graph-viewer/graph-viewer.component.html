@@ -1,6 +1,3 @@
-<data-type-selector [types]="[{ id: 1, value: 'Pie chart' }]"></data-type-selector>
+<data-type-selector [types]="TYPES" [selectedType]="selectedChart" (typeChange)="onChartChange($event)"></data-type-selector>
 
-<data-cutout [cutout]="cutout" (cutoutChange)="onCutoutChange($event)"></data-cutout>
-<data-values [values]="values" (valuesChanges)="onValuesChange($event)"></data-values>
-
-<graph-pie-chart class="chart" [values]="values" [cutoutPercentage]="cutout"></graph-pie-chart>
+<core-pie-chart *ngIf="isPieChartSelected()"></core-pie-chart>
