@@ -1,0 +1,20 @@
+.label {
+  display: block;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.inputValue {
+  margin-left: 10px;
+
+  &::after {
+    content: 'degrees';
+  }
+}
+
+:host {
+  margin: 10px 0;
+}

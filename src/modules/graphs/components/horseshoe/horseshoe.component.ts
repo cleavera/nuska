@@ -18,6 +18,9 @@ export class HorseshoeComponent implements OnChanges {
     @Input()
     public totalHorseshoeAngle: number = 0.8;
 
+    @Input()
+    public rotation: number = 0.5;
+
     public paths!: Array<IPath>;
 
     private _pieChartService: PieChartService;
@@ -31,7 +34,7 @@ export class HorseshoeComponent implements OnChanges {
     }
 
     private _reDraw(): void {
-        const rotationOffset: Angle = Angle.FromTurns(0.5 - ((1 - this.totalHorseshoeAngle) / 2));
+        const rotationOffset: Angle = Angle.FromTurns(this.rotation - ((1 - this.totalHorseshoeAngle) / 2));
 
         this.paths = this._pieChartService.generatePaths(this.values, this.cutoutPercentage, rotationOffset, Angle.FromTurns(this.totalHorseshoeAngle));
     }
