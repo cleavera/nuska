@@ -17,6 +17,10 @@ export class Angle {
         return new Angle(turns);
     }
 
+    public static FromRadians(radians: number): Angle {
+        return new Angle(radians / (2 * Math.PI));
+    }
+
     public isReflex(): boolean {
         return Math.abs(this.turns) > 0.5;
     }

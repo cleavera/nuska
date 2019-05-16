@@ -1,4 +1,5 @@
 <data-cutout [cutout]="cutout" (cutoutChange)="onCutoutChange($event)"></data-cutout>
+<data-rounded-caps [isChecked]="isRoundedCaps" (inputChange)="onRoundedCapsChange($event)"></data-rounded-caps>
 <data-values [values]="values" (valuesChanges)="onValuesChange($event)"></data-values>
 
-<graph-pie-chart class="chart" [values]="values" [cutoutPercentage]="cutout"></graph-pie-chart>
+<graph-pie-chart class="chart" [values]="values" [cutoutPercentage]="cutout" [isRoundedCaps]="isRoundedCaps"></graph-pie-chart>

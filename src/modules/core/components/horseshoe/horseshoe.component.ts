@@ -10,6 +10,7 @@ export class HorseshoeComponent {
     public cutout: number = 0.8;
     public angle: number = 0.8;
     public rotation: number = 0.5;
+    public isRoundedCaps: boolean = false;
 
     public onValuesChange(values: Array<number>): void {
         this.values = values;
@@ -25,5 +26,9 @@ export class HorseshoeComponent {
 
     public onRotationChange(angle: number): void {
         this.rotation = angle;
+    }
+
+    public onRoundedCapsChange(isRoundedCaps: boolean): void {
+        this.isRoundedCaps = isRoundedCaps;
     }
 }

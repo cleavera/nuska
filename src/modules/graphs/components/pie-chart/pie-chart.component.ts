@@ -15,6 +15,9 @@ export class PieChartComponent implements OnChanges {
     @Input()
     public cutoutPercentage: number = 0;
 
+    @Input()
+    public isRoundedCaps: boolean = false;
+
     public paths!: Array<IPath>;
 
     private _pieChartService: PieChartService;
@@ -28,6 +31,6 @@ export class PieChartComponent implements OnChanges {
     }
 
     private _reDraw(): void {
-        this.paths = this._pieChartService.generatePaths(this.values, this.cutoutPercentage, Angle.FromTurns(0.5), Angle.FromTurns(1));
+        this.paths = this._pieChartService.generatePaths(this.values, this.cutoutPercentage, Angle.FromTurns(0.5), Angle.FromTurns(1), this.isRoundedCaps);
     }
 }

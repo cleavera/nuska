@@ -1,6 +1,7 @@
 <data-cutout [cutout]="cutout" (cutoutChange)="onCutoutChange($event)"></data-cutout>
 <data-total-graph-angle [angle]="angle" (angleChange)="onAngleChange($event)"></data-total-graph-angle>
 <data-rotation [angle]="rotation" (angleChange)="onRotationChange($event)"></data-rotation>
+<data-rounded-caps [isChecked]="isRoundedCaps" (inputChange)="onRoundedCapsChange($event)"></data-rounded-caps>
 <data-values [values]="values" (valuesChanges)="onValuesChange($event)"></data-values>
 
-<graph-horseshoe class="chart" [values]="values" [cutoutPercentage]="cutout" [totalHorseshoeAngle]="angle" [rotation]="rotation"></graph-horseshoe>
+<graph-horseshoe class="chart" [values]="values" [cutoutPercentage]="cutout" [totalHorseshoeAngle]="angle" [rotation]="rotation" [isRoundedCaps]="isRoundedCaps"></graph-horseshoe>
